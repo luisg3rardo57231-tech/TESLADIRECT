@@ -139,12 +139,12 @@ const $=id=>document.getElementById(id);
 const screens=[...document.querySelectorAll('.screen')];
 const nav=$('bottomNav');
 const cars=[
-{name:'Model 3',price:38990,range:'341 mi',accel:'4.2 s',image:'https://images.unsplash.com/photo-1560958089-b8a1929?auto=format&fit=crop&w=900&q=85',alt:'Sedán eléctrico Tesla en exterior'},
-{name:'Model Y',price:44990,range:'330 mi',accel:'4.8 s',image:'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=900&q=85',alt:'SUV eléctrico en carretera'},
-{name:'Model S',price:74990,range:'402 mi',accel:'3.1 s',image:'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=85',alt:'Sedán deportivo premium'},
-{name:'Model X',price:79990,range:'335 mi',accel:'3.8 s',image:'https://images.unsplash.com/photo-1568844293986-8d0400bd4745?auto=format&fit=crop&w=900&q=85',alt:'SUV de lujo'},
-{name:'Cybertruck',price:81990,range:'340 mi',accel:'2.6 s',image:'https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=900&q=85',alt:'Camioneta futurista en paisaje'},
-{name:'Roadster',price:200000,range:'620 mi*',accel:'1.9 s*',image:'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85',alt:'Automóvil deportivo de alto desempeño'}
+{name:'Model 3',price:38990,range:'341 mi',accel:'4.2 s',image:'https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto,w_1200/Homepage-Model-3-Desktop',alt:'Sedán eléctrico Tesla en exterior'},
+{name:'Model Y',price:44990,range:'330 mi',accel:'4.8 s',image:'https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto,w_1200/Homepage-Model-Y-Desktop',alt:'SUV eléctrico en carretera'},
+{name:'Model S',price:74990,range:'402 mi',accel:'3.1 s',image:'https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-S-Desktop-LHD-6.22.jpg',alt:'Sedán deportivo premium'},
+{name:'Model X',price:79990,range:'335 mi',accel:'3.8 s',image:'https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto,w_1200/Homepage-Model-X-Desktop-LHD',alt:'SUV de lujo'},
+{name:'Cybertruck',price:81990,range:'340 mi',accel:'2.6 s',image:'https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto,w_1200/Mega-Menu-Vehicles-Cybertruck-1x.png',alt:'Camioneta futurista en paisaje'},
+{name:'Roadster',price:200000,range:'620 mi*',accel:'1.9 s*',image:'https://www.tesla.com/sites/default/files/images/roadster/roadster-social.jpg',alt:'Automóvil deportivo de alto desempeño'}
 ];
 const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
 let user=null,tradeCredit=0,orderDone=false,keyActive=false,upgrades={fsd:false,boost:false,connect:false},selectedCar=cars[0];
