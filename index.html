@@ -253,6 +253,7 @@ else if(action==='digital-key'){if(!orderDone){toast('Confirma primero tu pedido
 $('signinForm').addEventListener('submit',e=>{e.preventDefault();const email=$('loginEmail').value.trim(),password=$('loginPassword').value;if(!email||!password)return;const name=email.split('@')[0].replace(/[._-]+/g,' ').replace(/\b\w/g,x=>x.toUpperCase());login(name,email)});
 $('signupForm').addEventListener('submit',e=>{e.preventDefault();const email=$('newEmail').value.trim(),password=$('newPassword').value;if(!email||password.length<6){toast('Usa una contraseña de al menos 6 caracteres');return}const name=email.split('@')[0].replace(/[._-]+/g,' ').replace(/\b\w/g,x=>x.toUpperCase());login(name,email)});
 ['priceVehicle','downRange','termRange','aprRange'].forEach(id=>$(id).addEventListener('input',calcPrice));
+$('priceVehicle').addEventListener('change',()=>{const match=cars.find(car=>car.price===Number($('priceVehicle').value));if(match){selectedCar=match;refreshCheckout();}});
 $('driveDate').min=new Date().toISOString().slice(0,10);
 renderCars();calcPrice();show('welcome');
 })();
