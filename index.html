@@ -79,6 +79,87 @@ body{background:radial-gradient(ellipse at 50% -15%,#303640 0,transparent 38%),#
 .story-card{background:#1b1d20;color:#fff}
 @media(max-width:360px){.hero{min-height:320px}.car-art{height:118px}}
 
+
+/* REFINED TESLA DIRECT — PREMIUM COMMERCIAL LAYOUT */
+:root{--bg:#08090b;--surface:#111317;--surface2:#191c21;--line:#292d34;--muted:#a2a7af;--text:#f7f7f7;--red:#e82127}
+html,body{background:#08090b}
+body{background:radial-gradient(ellipse at 50% -18%,#252a31 0,transparent 42%),#08090b;font-family:Inter,"Helvetica Neue",Arial,sans-serif;letter-spacing:-.01em}
+.app{width:min(100%,1120px);min-height:100vh;margin:0 auto;background:#08090b;box-shadow:none;padding-bottom:90px}
+.topbar{height:76px;padding:0 clamp(20px,5vw,64px);background:#08090bf2;border-bottom:1px solid #ffffff14;backdrop-filter:blur(18px)}
+.brand{font-size:17px;letter-spacing:.2em}.brand small{font-size:8px;letter-spacing:.28em}
+.top-right{font-size:10px;letter-spacing:.1em}
+main{padding:clamp(24px,4vw,54px) clamp(18px,5vw,64px) 48px}
+.welcome{padding:10px 0 22px;max-width:760px}
+.eyebrow{font-size:9px;letter-spacing:.22em;color:#e82127}
+.heading{font-weight:550;font-size:clamp(32px,5vw,54px);line-height:1.02;letter-spacing:-.065em}
+.muted{font-size:13px;line-height:1.75;color:#a6abb3}
+.hero{min-height:clamp(340px,48vw,540px);border:1px solid #ffffff17;border-radius:2px;background:radial-gradient(ellipse at 75% 35%,#3a414b 0,transparent 37%),linear-gradient(115deg,#171b21 0%,#090b0e 62%,#14171c 100%);box-shadow:0 22px 60px #0006}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050608e8 0%,#0506088c 52%,#05060812 100%);pointer-events:none}
+.hero:after{content:"";position:absolute;right:8%;top:18%;width:38%;height:62%;border:1px solid #ffffff12;border-radius:50%;box-shadow:0 0 90px #e8212712,inset 0 0 70px #ffffff08;pointer-events:none}
+.hero-content{position:relative;z-index:2;padding:clamp(25px,5vw,58px);max-width:620px}
+.hero h1{font-size:clamp(48px,8vw,86px);font-weight:550;letter-spacing:-.085em;line-height:.91}
+.hero p{font-size:13px;max-width:380px;line-height:1.8;color:#d0d2d6}
+.btn{border-radius:2px;min-height:48px;padding:15px 21px;font-size:10px;letter-spacing:.12em;font-weight:750}
+.btn-red{background:#e82127}.btn-red:hover{background:#c91c22}
+.btn-dark{background:#f4f4f4;color:#111;border:1px solid #f4f4f4}
+.btn-quiet{border-color:#666b73;color:#f4f4f4}
+.feature-row{gap:12px}
+.feature,.panel,.auth-card,.car-card,.menu-tile{background:#111317;border:1px solid #292d34;border-radius:2px;box-shadow:none}
+.feature{padding:20px;transition:border-color .2s,background .2s}
+.feature:hover,.menu-tile:hover,.car-card:hover{border-color:#656b75;background:#15181d}
+.feature .ico{font-size:18px;color:#e82127}.feature b{font-size:13px;font-weight:650}.feature span{font-size:11px;line-height:1.65}
+.section-head{margin:12px 0 24px}
+.section-head h2{font-size:clamp(30px,4vw,46px);font-weight:550;letter-spacing:-.065em}
+.subheading{font-size:21px;font-weight:550}
+.car-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.car-card{overflow:hidden;transition:transform .25s,border-color .25s}
+.car-card:hover{transform:translateY(-3px)}
+.car-art{height:clamp(145px,22vw,245px);display:block;overflow:hidden;background:linear-gradient(145deg,#242830,#111317)}
+.car-art img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;transition:transform .5s;filter:saturate(.88)}
+.car-card:hover .car-art img{transform:scale(1.035)}
+.car-info{padding:17px}
+.car-info h3{font-size:17px;font-weight:600;letter-spacing:-.04em}
+.car-info p{font-size:10px;line-height:1.6}
+.car-price{font-size:12px;margin:13px 0}
+.car-info .btn{width:100%}
+.panel{padding:22px;margin:14px 0}
+.panel h3{font-size:17px;font-weight:600}
+.auth-card{padding:clamp(20px,4vw,34px)}
+.tabs{border-radius:2px}.tabs button{border-radius:1px}.tabs button.active{background:#242830}
+.field input,.field select{border-radius:2px;background:#090a0c;border-color:#373b43}
+.menu-grid{gap:12px}.menu-tile{padding:20px;min-height:126px}.menu-tile span{color:#e82127}
+.story-card{height:220px;border:1px solid #ffffff16}
+.story-card img{filter:brightness(.66) saturate(.78)}
+.story-card div{left:22px;bottom:20px}
+.story-card h3{font-size:23px;font-weight:550;letter-spacing:-.055em}
+.story-card p{font-size:11px;color:#d1d3d7}
+.story-robot{height:250px}
+.bottom-nav{width:min(100%,1120px);padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:#090a0cf5;border-top:1px solid #ffffff17;backdrop-filter:blur(20px)}
+.nav-item{font-size:9px;letter-spacing:.04em;padding:7px 3px}
+.nav-item .nav-ico{font-size:17px}
+.toast{border-radius:2px}
+.status-badge{border-radius:2px}
+.big-avatar{border-radius:2px}
+@media(min-width:760px){
+ .welcome{padding-top:18px}
+ .feature-row{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .car-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .visual-story{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+ .story-card,.story-robot{height:260px}
+ .bottom-nav{left:50%;transform:translateX(-50%);bottom:0;border-radius:0}
+ .app{padding-bottom:88px}
+}
+@media(max-width:520px){
+ .app{width:100%}
+ .car-grid{grid-template-columns:1fr 1fr;gap:9px}
+ .car-info{padding:12px}
+ .car-art{height:112px}
+ .story-card{height:185px}
+ .hero{min-height:370px}
+ .hero:after{right:-8%;width:55%;opacity:.6}
+}
+@media(max-width:360px){.car-grid{grid-template-columns:1fr}.car-art{height:160px}}
+
 </style>
 </head>
 <body>
