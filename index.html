@@ -86,6 +86,34 @@ main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.scre
 #models>.btn{margin:8px 4px}
 @media(max-width:360px){#models .roadster-option{height:140px;margin:11px 2px}#models .option-copy{top:15px;width:43%}#models .option-copy h3{font-size:13px}#models .option-copy p{font-size:9px}#models .option-image{width:59%}}
 
+
+/* Premium welcome redesign — visual flight concept, not a real vehicle capability */
+#welcome .flight-hero{height:490px;background:#050710;border:1px solid #4a4d57;border-radius:22px;isolation:isolate;box-shadow:0 18px 55px #0009}
+.flight-sky{position:absolute;inset:0;background:radial-gradient(ellipse at 76% 19%,#41678388,transparent 39%),radial-gradient(ellipse at 35% 65%,#2b4263,transparent 54%),linear-gradient(165deg,#050812 7%,#0e1829 44%,#172638 60%,#040509 88%)}
+.flight-sky:before{content:"";position:absolute;inset:0;background-image:radial-gradient(1px 1px at 14% 12%,#fff9 90%,transparent),radial-gradient(1px 1px at 65% 19%,#fff9 90%,transparent),radial-gradient(1px 1px at 82% 34%,#fff7 90%,transparent),radial-gradient(2px 2px at 48% 9%,#fff8 90%,transparent),radial-gradient(1px 1px at 27% 40%,#fff8 90%,transparent);background-size:140px 170px;opacity:.8}
+.flight-sky:after{content:"";position:absolute;left:-30%;right:-30%;height:230px;top:190px;border-radius:50% 50% 0 0;background:radial-gradient(ellipse at 55% 0%,#b5d5e888,transparent 36%),linear-gradient(180deg,#6787a4 0%,#263d59 14%,#0b1424 45%,transparent 85%);transform:rotate(-13deg);filter:blur(4px);box-shadow:0 -8px 30px #b3d8ff55}
+.flight-vehicle{position:absolute;top:62px;left:8%;right:4%;height:235px;background:url('https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/R_/_V_/1-tesla-roadster-performance-front-desktop-wide.jpg') center/contain no-repeat;filter:drop-shadow(0 16px 14px #000b) drop-shadow(0 0 25px #fa244033);transform:rotate(-8deg);animation:flightFloat 5s ease-in-out infinite}
+.flight-thruster{position:absolute;top:241px;right:22%;width:100px;height:7px;background:#c6efff;border-radius:100%;transform:rotate(26deg);filter:blur(6px);box-shadow:0 0 18px 7px #6bc8ff80;opacity:.6;animation:flightPulse 2s ease-in-out infinite alternate}
+.flight-label{position:absolute;right:16px;top:15px;color:#d6d9e4a6;font-size:7px;letter-spacing:.13em;font-weight:800}
+#welcome .flight-hero:before{z-index:1;background:linear-gradient(0deg,#050506 0%,#050506f0 17%,#05050633 53%,transparent 80%)}
+#welcome .hero-copy{z-index:2;bottom:20px;left:22px;right:22px}
+#welcome .hero h1{font-size:clamp(38px,10vw,54px);line-height:.91;letter-spacing:-.075em;margin:12px 0}
+#welcome .hero h1 em{font-style:normal;color:#fff}
+#welcome .hero p{max-width:320px;font-size:11px;line-height:1.6}
+#welcome .hero-actions .btn{min-height:49px;font-size:10px;letter-spacing:.045em}
+#welcome .welcome-explore{margin:16px 0 19px;min-height:52px;border-color:#55545e;font-size:11px;letter-spacing:.08em;gap:14px}
+#welcome .welcome-explore:hover{border-color:#ed293f;background:#1a1016}
+#welcome .welcome-features{gap:12px}
+#welcome .welcome-features .tile{position:relative;text-align:left;min-height:140px;background:linear-gradient(145deg,#1d202a,#101014 70%);border:1px solid #454650;border-radius:17px;padding:17px;transition:transform .2s,border-color .2s}
+#welcome .welcome-features .tile:hover{transform:translateY(-3px);border-color:#ed293f}
+#welcome .welcome-features .symbol{font-size:26px;color:#ff344c}
+#welcome .welcome-features b{font-size:13px;margin:12px 0 6px}
+#welcome .welcome-features small{font-size:10px;line-height:1.5}
+#welcome .feature-arrow{position:absolute;right:14px;top:14px;color:#b6b6c0;font-size:15px}
+@keyframes flightFloat{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-9px) rotate(-7deg)}}
+@keyframes flightPulse{to{opacity:.9;filter:blur(8px)}}
+@media(prefers-reduced-motion:reduce){.flight-vehicle,.flight-thruster{animation:none}}
+@media(max-width:390px){#welcome .flight-hero{height:450px}.flight-vehicle{top:68px;height:205px}#welcome .hero h1{font-size:40px}#welcome .hero-copy{left:17px;right:17px}#welcome .hero-actions .btn{font-size:9px;padding:10px}}
 </style>
 </head>
 <body>
@@ -93,9 +121,9 @@ main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.scre
 <header class="topbar"><div class="brand">TESLA DIRECT AI<small>YOUR ROADSTER. YOUR WAY.</small></div><div class="top-actions"><span id="sessionLabel">GUEST</span><button class="circle-btn" data-go="account" aria-label="Mi cuenta">◉</button></div></header>
 <main>
 <section class="screen active" id="welcome">
-<div class="hero"><div class="hero-copy"><div class="eyebrow">THE ALL-NEW ROADSTER</div><h1>Your Roadster.<br>Your Way.</h1><p>Una experiencia exclusiva para descubrir, personalizar y reservar el nuevo Tesla Roadster.</p><div class="hero-actions"><button class="btn primary" data-go="auth">Sign in</button><button class="btn outline" data-go="auth">Create account</button></div></div></div>
-<div style="text-align:center;margin:15px 0 20px"><button class="btn outline block" data-go="home">Explore Roadster　→</button></div>
-<div class="grid2"><div class="tile"><div class="symbol">⚡</div><b>Performance</b><small>Potencia y aceleración extraordinarias.</small></div><div class="tile"><div class="symbol">✧</div><b>Personalization</b><small>Diseña un Roadster a tu medida.</small></div></div>
+<div class="hero flight-hero"><div class="flight-sky" aria-hidden="true"></div><div class="flight-vehicle" role="img" aria-label="Concepto visual de un Tesla Roadster en un escenario espacial"></div><div class="flight-thruster" aria-hidden="true"></div><span class="flight-label">CONCEPT VISUAL · NOT AN ACTUAL FLIGHT FEATURE</span><div class="hero-copy"><div class="eyebrow">THE ALL-NEW ROADSTER</div><h1>Your Roadster.<br><em>Your Way.</em></h1><p>El futuro comienza aquí. Descubre, personaliza y explora el Tesla Roadster.</p><div class="hero-actions"><button class="btn primary" data-go="auth">Sign in <span aria-hidden="true">↗</span></button><button class="btn outline" data-go="auth">Create account</button></div></div></div>
+<button class="btn outline block welcome-explore" data-go="home">Explore Roadster <span aria-hidden="true">→</span></button>
+<div class="grid2 welcome-features"><button class="tile" data-go="models"><div class="symbol">ϟ</div><b>Performance</b><small>Potencia y aceleración extraordinarias.</small><span class="feature-arrow" aria-hidden="true">↗</span></button><button class="tile" data-go="configurator"><div class="symbol">◇</div><b>Personalization</b><small>Diseña un Roadster a tu medida.</small><span class="feature-arrow" aria-hidden="true">↗</span></button></div>
 </section>
 <section class="screen" id="auth">
 <div class="section-head"><div class="eyebrow">TESLA DIRECT AI</div><h1 class="title">Welcome back.</h1><p class="muted">Sign in to continue your Roadster journey.</p></div>
