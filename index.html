@@ -30,6 +30,21 @@ main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.scre
 .check-list{list-style:none;padding:0;margin:14px 0}.check-list li{font-size:10px;padding:8px 0;border-bottom:1px solid #ffffff12;color:#d5d5da}.check-list li:before{content:"✓";color:#ff4355;font-weight:900;margin-right:9px}
 .field{margin:13px 0}.field label{display:block;font-size:9px;font-weight:800;color:#d5d5da;margin-bottom:7px}.field input,.field select{width:100%;height:43px;border-radius:9px;background:#09090c;border:1px solid #3a3a43;color:#fff;padding:0 12px;font-size:11px}
 .chat{display:flex;flex-direction:column;gap:10px;margin:16px 0}.bubble{max-width:85%;padding:12px;border-radius:13px;background:#202026;font-size:10px;line-height:1.5}.bubble.ai{align-self:flex-start;border:1px solid #383840}.bubble.user{align-self:flex-end;background:#3a1019;border:1px solid #67202d}.quick-replies{display:flex;flex-wrap:wrap;gap:7px}.quick-replies button{border:1px solid #484850;background:#151519;color:#eee;border-radius:999px;padding:8px 10px;font-size:9px}
+#financing .chat{max-height:330px;overflow-y:auto;padding:16px;background:#101014;border:1px solid #2e2e36;border-radius:18px;scroll-behavior:smooth}
+#financing .bubble{font-size:12px;line-height:1.6;overflow-wrap:anywhere;max-width:88%;padding:12px 15px}
+#financing .bubble.ai{background:#24242b;border-radius:16px 16px 16px 5px}
+#financing .bubble.user{background:#4a111e;border-color:#7c2537;border-radius:16px 16px 5px 16px}
+#financing .quick-replies button{font-size:11px;cursor:pointer;padding:10px 12px}
+#financing .quick-replies button:hover{border-color:#e82137}
+.chat-composer{display:flex;align-items:center;gap:8px;margin-top:14px;padding:7px;background:#202026;border:1px solid #494950;border-radius:16px}
+.chat-composer:focus-within{border-color:#ed243b;box-shadow:0 0 0 2px #ed243b22}
+.chat-composer input{flex:1;min-width:0;padding:12px 9px;background:transparent;border:0;outline:none;color:white;font-size:13px}
+.chat-composer button{border:0;border-radius:11px;background:#e82137;color:white;font-weight:800;padding:12px 15px;cursor:pointer;white-space:nowrap}
+.chat-composer button:hover{background:#c9132b}
+.chat-note{font-size:10px;color:#9999a5;margin:8px 2px 0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:420px){#financing .chat{max-height:290px}#financing .bubble{font-size:11px}.chat-composer input{font-size:12px}}
+
 .benefit{display:flex;gap:12px;align-items:center;background:#19191e;border:1px solid #33333b;border-radius:11px;padding:13px;margin:9px 0}.benefit .symbol{font-size:23px;color:#eebd70}.benefit b{font-size:11px;display:block}.benefit p{font-size:9px;color:#aaaab2;margin:4px 0 0;line-height:1.4}
 .summary-line{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #ffffff14;font-size:10px}.summary-line strong{font-size:11px}.total{font-size:24px;font-weight:850;letter-spacing:-.05em}
 .success-mark{width:78px;height:78px;border:3px solid #e3182b;color:#f02b40;border-radius:50%;display:grid;place-items:center;font-size:43px;margin:28px auto 18px;box-shadow:0 0 40px #e3182b22}
@@ -120,9 +135,11 @@ main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.scre
 </section>
 <section class="screen" id="financing">
 <div class="section-head"><div class="eyebrow">AI FINANCING ASSISTANT</div><h1 class="title">Let's find the<br>best option.</h1><p class="muted">Cuéntanos qué plan se adapta a tus objetivos.</p></div>
-<div class="chat" id="chat"><div class="bubble ai">Welcome! What is your preferred monthly payment range?</div><div class="bubble user" id="paymentReply">I am exploring my options.</div><div class="bubble ai">Are you an existing Tesla owner?</div></div>
-<div class="quick-replies"><button data-reply="$1,000–$2,000 USD">$1,000–$2,000</button><button data-reply="$2,000–$3,000 USD">$2,000–$3,000</button><button data-reply="Flexible budget">Flexible budget</button></div>
-<div class="config-card" style="margin-top:15px"><h3>Your personalized plan</h3><ul class="check-list"><li>Flexible financing options</li><li>Personalized ownership benefits</li><li>Estimated monthly payment: $1,299*</li></ul><button class="btn primary block" data-go="benefits">View my benefits</button></div>
+<div class="chat" id="chat" role="log" aria-live="polite" aria-label="Financing assistant conversation"><div class="bubble ai">Welcome! Tell me your preferred monthly budget, down payment or financing questions. I can help you explore an illustrative plan.</div></div>
+<div class="quick-replies" aria-label="Suggested questions"><button type="button" data-reply="$1,000–$2,000 USD">$1,000–$2,000</button><button type="button" data-reply="$2,000–$3,000 USD">$2,000–$3,000</button><button type="button" data-reply="I already own a Tesla">I own a Tesla</button><button type="button" data-reply="How does financing work?">How it works</button></div>
+<form id="financeChatForm" class="chat-composer"><label for="financeMessage" class="sr-only">Write your financing question</label><input id="financeMessage" type="text" maxlength="400" autocomplete="off" placeholder="Write your question or budget…" aria-label="Write your financing question" required><button type="submit" aria-label="Send message">Send ↗</button></form>
+<p class="chat-note">Interactive demo assistant · Answers are generated locally, without a live AI service.</p>
+<div class="config-card" style="margin-top:15px"><h3>Your personalized plan</h3><ul class="check-list"><li>Flexible financing options</li><li>Personalized ownership benefits</li><li><span id="financeEstimate">Example monthly payment: not calculated yet</span></li></ul><button class="btn primary block" data-go="benefits">View my benefits</button></div>
 <p class="muted">*Simulación académica, no constituye una cotización ni oferta de crédito.</p>
 </section>
 <section class="screen" id="benefits">
@@ -181,8 +198,39 @@ const tab=e.target.closest('[data-tab]');if(tab){document.querySelectorAll('[dat
 const sw=e.target.closest('[data-color]');if(sw){document.querySelectorAll('.swatch').forEach(x=>x.classList.toggle('active',x===sw));const names={red:'Signature Red',white:'Pearl White',silver:'Midnight Silver',black:'Obsidian Black',blue:'Deep Blue'};color=names[sw.dataset.color];$('colorName').textContent=color;updateConfig()}
 const it=e.target.closest('[data-interior]');if(it){interior=it.dataset.interior;updateConfig();toast(interior+' selected')}
 const wh=e.target.closest('[data-wheel]');if(wh){wheels=wh.dataset.wheel;updateConfig();toast(wheels+' selected')}
-const reply=e.target.closest('[data-reply]');if(reply){$('paymentReply').textContent=reply.dataset.reply;toast('Preference saved in this demo')}
+const reply=e.target.closest('[data-reply]');if(reply){sendFinanceMessage(reply.dataset.reply)}
 });
+// Local rule-based assistant for the academic prototype; no external AI or lending service.
+let financeBudget=null;
+function addFinanceBubble(message,who){
+ const bubble=document.createElement('div');bubble.className='bubble '+who;bubble.textContent=message;
+ $('chat').appendChild(bubble);$('chat').scrollTop=$('chat').scrollHeight;
+}
+function sendFinanceMessage(raw){
+ const message=String(raw||'').trim().slice(0,400);if(!message)return;
+ addFinanceBubble(message,'user');$('financeMessage').value='';
+ const normalized=message.toLowerCase();
+ let answer;
+ const amounts=[...message.matchAll(/(?:\$|usd\s*)?([\d]{1,3}(?:[,\s]\d{3})+|\d{4,6})(?:\s*(?:usd|d[oó]lares))?/gi)]
+   .map(m=>Number(m[1].replace(/[,\s]/g,''))).filter(n=>n>=500&&n<=500000);
+ if(/(?:1[,.]?000|2[,.]?000)/.test(normalized)&&/1[,.]?000/.test(normalized)&&/2[,.]?000/.test(normalized)&&amounts.length<2){amounts.push(1000,2000)}
+ if(/(?:2[,.]?000|3[,.]?000)/.test(normalized)&&/2[,.]?000/.test(normalized)&&/3[,.]?000/.test(normalized)&&amounts.length<2){amounts.push(2000,3000)}
+ if(/hola|hello|buenas|hi\b/.test(normalized)){answer='Hi! Tell me your monthly payment target in USD, whether you already own a Tesla, or ask how our financing simulation works.'}
+ else if(/(?:ya tengo|soy dueño|i own|existing|already own|propietario)/.test(normalized)){answer='Thanks for sharing! Existing owners may be eligible for loyalty programs, subject to actual program terms. In this demo, no benefit or discount is guaranteed. What monthly budget would you prefer?'}
+ else if(/(?:enganche|down payment|deposit|inicial)/.test(normalized)){answer='A higher down payment generally reduces the amount financed. For an illustrative $200,000 vehicle, a 20% down payment would be $40,000 before taxes and fees. The final terms would depend on a real lender.'}
+ else if(/(?:tasa|inter[eé]s|apr|rate)/.test(normalized)){answer='The interest rate depends on lender approval, credit history, term and market conditions. This prototype does not provide a real APR or credit approval.'}
+ else if(/(?:plazo|meses|months|term|financiamiento|financing|how does|c[oó]mo funciona)/.test(normalized)){answer='Financing typically depends on the vehicle price, down payment, APR and loan term. This is an academic demo, so we can discuss options but cannot provide a binding quote.'}
+ else if(/flexible|explor|no s[eé]|not sure/.test(normalized)){answer='No problem. You can start by sharing a comfortable monthly budget in USD, such as $1,500, or ask about down payments and loan terms.'}
+ else if(amounts.length){
+ const budget=amounts.length>=2?Math.round((amounts[0]+amounts[1])/2):amounts[0];
+ financeBudget=budget;
+ $('financeEstimate').textContent='Preferred monthly budget: '+budget.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0})+' (not a loan quote)';
+ answer='Got it! I saved your preferred monthly budget of about '+budget.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0})+'. Your actual monthly payment would depend on the down payment, APR, term and eligibility. Would you like to explore the down payment or financing term?';
+ }
+ else{answer='I can help with monthly budgets, down payments, interest rates, financing terms and potential ownership benefits. Try asking “What if I pay $1,500 per month?”'}
+ addFinanceBubble(answer,'ai');
+}
+$('financeChatForm').addEventListener('submit',event=>{event.preventDefault();sendFinanceMessage($('financeMessage').value)});
 function updateConfig(){$('configDescription').textContent=model+' · '+color+' · '+interior+' · '+wheels}
 const now=new Date();$('driveDate').min=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
 })();
