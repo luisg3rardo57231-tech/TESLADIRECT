@@ -14,7 +14,7 @@
 main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.screen.active{display:block}@keyframes enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
 .eyebrow{font-size:8px;letter-spacing:.22em;color:#ff5262;font-weight:900;text-transform:uppercase}.muted{font-size:11px;color:var(--muted);line-height:1.65}.title{font-size:29px;line-height:1.02;letter-spacing:-.065em;margin:8px 0;font-weight:680}.subtitle{font-size:17px;letter-spacing:-.04em;margin:0 0 8px}
 .btn{border:0;border-radius:999px;min-height:43px;padding:12px 17px;font-size:9px;letter-spacing:.07em;text-transform:uppercase;font-weight:850;display:inline-flex;align-items:center;justify-content:center;gap:8px}.primary{background:linear-gradient(110deg,#f3263b,#b60820);color:#fff;box-shadow:0 6px 20px #d20c2930}.secondary{background:#1b1b20;border:1px solid #45454d;color:#fff}.outline{background:transparent;border:1px solid #85858d;color:#fff}.block{width:100%}.btn:active{transform:scale(.985)}
-.hero{height:400px;border-radius:15px;position:relative;overflow:hidden;background:#151519 url('https://www.tesla.com/sites/default/files/images/roadster/roadster-social.jpg') center/cover no-repeat;border:1px solid #ffffff20}
+.hero{height:400px;border-radius:15px;position:relative;overflow:hidden;background:#151519 url('https://www.autobics.com/wp-content/uploads/2017/11/new-tesla-roadster-red-2020-pr.jpg') center/cover no-repeat;border:1px solid #ffffff20}
 .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#050506 0%,#05050616 58%,#05050636 100%),linear-gradient(90deg,#0505068c,transparent 90%)}
 .hero-copy{position:absolute;left:20px;right:20px;bottom:22px}.hero h1{font-size:49px;line-height:.88;letter-spacing:-.08em;margin:10px 0;font-weight:750}.hero p{font-size:10px;line-height:1.6;color:#e3e3e7;max-width:260px}.hero-actions{display:flex;gap:8px;margin-top:15px}.hero-actions>*{flex:1}
 .car-visual{height:195px;border-radius:13px;overflow:hidden;position:relative;background:#111116 url('https://www.tesla.com/sites/default/files/images/roadster/roadster-social.jpg') center/cover no-repeat;border:1px solid #ffffff17}
@@ -39,6 +39,19 @@ main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.scre
 @media(min-width:700px){body{padding:20px 0}.app{border:1px solid #38383f;border-radius:28px;min-height:calc(100vh - 40px)}.topbar{border-radius:28px 28px 0 0}.bottom-nav{bottom:20px;border-radius:0 0 28px 28px}.app{padding-bottom:85px}}
 @media(max-width:360px){main{padding-left:13px;padding-right:13px}.hero{height:350px}.hero h1{font-size:43px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* ROADSTER PHOTO GALLERY — curated exterior and cabin imagery */
+.hero{background-image:linear-gradient(0deg,#050506 0%,#05050612 58%,#05050636 100%),url('https://www.autobics.com/wp-content/uploads/2017/11/new-tesla-roadster-red-2020-pr.jpg');background-position:center 54%}
+.car-visual{background-image:linear-gradient(0deg,#05050624,#05050608),url('https://images.1thingaweek.com/article/4-tesla-roadster-2020-back.jpg');background-position:center 53%;background-size:cover}
+#homeRoadster{background-image:linear-gradient(0deg,#05050632,transparent),url('https://elektrickevozy.cz/_next/image?q=75&url=https%3A%2F%2Fbackend.elektrickevozy.cz%2Fwp-content%2Fuploads%2F2021%2F09%2Ftesla-roadster-obr2.jpg&w=3840');background-position:center 54%}
+#modelPerformance{background-image:url('https://www.autobics.com/wp-content/uploads/2017/11/new-tesla-roadster-red-2020-pr.jpg');background-position:center 52%}
+#modelThrust{background-image:url('https://s1.cdn.autoevolution.com/images/news/gallery/here-we-go-again-tesla-roadster-might-debut-this-month_5.jpg');background-position:center 48%}
+#modelRocket{background-image:url('https://images.1thingaweek.com/article/4-tesla-roadster-2020-back.jpg');background-position:center 55%}
+#detailRoadster{background-image:url('https://cdn.renderhub.com/creator-3d/tesla-roadster-2020/tesla-roadster-2020-04.jpg');background-position:center 54%}
+#configImage{background-image:url('https://www.autobics.com/wp-content/uploads/2017/11/new-tesla-roadster-red-2020-pr.jpg');background-position:center 52%}
+#interiorPhoto{background-image:url('https://s1.cdn.autoevolution.com/images/gallery/TESLA-MOTORS-Roadster-6176_1.jpg');background-position:center 45%}
+#summaryRoadster{background-image:url('https://images.1thingaweek.com/article/4-tesla-roadster-2020-back.jpg');background-position:center 54%}
+
 </style>
 </head>
 <body>
@@ -57,20 +70,20 @@ main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.scre
 </section>
 <section class="screen" id="home">
 <div class="section-head"><div class="eyebrow">WELCOME TO YOUR ROADSTER</div><h1 class="title">Hello, <span id="helloName">Driver</span>!</h1><p class="muted">Let's find your perfect Roadster.</p></div>
-<div class="car-visual"></div>
+<div class="car-visual" id="homeRoadster"></div>
 <div class="grid2" style="margin-top:11px"><button class="tile" data-go="models"><div class="symbol">⌁</div><b>Explore Roadster</b><small>Discover three extraordinary configurations.</small></button><button class="tile" data-go="financing"><div class="symbol">▤</div><b>AI Financing</b><small>Find a plan that fits your goals.</small></button><button class="tile" data-go="benefits"><div class="symbol">♛</div><b>My Benefits</b><small>Exclusive ownership benefits.</small></button><button class="tile" data-go="configurator"><div class="symbol">⚙</div><b>My Configuration</b><small>Customize every detail.</small></button></div>
 <div class="config-card config-row"><div><b style="font-size:11px">Ready for the next step?</b><p>Schedule a personal Roadster experience.</p></div><button class="btn primary" data-go="testdrive">Book →</button></div>
 </section>
 <section class="screen" id="models">
 <div class="section-head"><div class="eyebrow">ROADSTER COLLECTION</div><h1 class="title">Choose your<br>Roadster.</h1><p class="muted">Three extraordinary configurations.</p></div>
-<div class="config-card"><div class="car-visual"></div><div class="config-row" style="margin-top:12px"><div><h3>Performance</h3><p>The ultimate driving experience.</p></div><button class="btn primary" data-action="choose" data-model="Performance">Explore →</button></div></div>
-<div class="config-card"><div class="car-visual" style="background-position:65% center"></div><div class="config-row"><div><h3>Thrust</h3><p>Added propulsion for more power.</p></div><button class="btn primary" data-action="choose" data-model="Thrust">Explore →</button></div></div>
-<div class="config-card"><div class="car-visual" style="background-position:35% center"></div><div class="config-row"><div><h3>Rocket</h3><p>An exclusive invitation to the extraordinary.</p></div><button class="btn primary" data-action="choose" data-model="Rocket">Explore →</button></div></div>
+<div class="config-card"><div class="car-visual" id="modelPerformance"></div><div class="config-row" style="margin-top:12px"><div><h3>Performance</h3><p>The ultimate driving experience.</p></div><button class="btn primary" data-action="choose" data-model="Performance">Explore →</button></div></div>
+<div class="config-card"><div class="car-visual" id="modelThrust"></div><div class="config-row"><div><h3>Thrust</h3><p>Added propulsion for more power.</p></div><button class="btn primary" data-action="choose" data-model="Thrust">Explore →</button></div></div>
+<div class="config-card"><div class="car-visual" id="modelRocket"></div><div class="config-row"><div><h3>Rocket</h3><p>An exclusive invitation to the extraordinary.</p></div><button class="btn primary" data-action="choose" data-model="Rocket">Explore →</button></div></div>
 <button class="btn outline block" data-go="details">Compare configurations</button>
 </section>
 <section class="screen" id="details">
 <div class="section-head"><div class="eyebrow">ROADSTER PERFORMANCE</div><h1 class="title" id="detailTitle">Performance</h1><p class="muted">The perfect balance of power and innovation.</p></div>
-<div class="car-visual" style="height:220px"></div>
+<div class="car-visual" id="detailRoadster" style="height:220px"></div>
 <div class="stats"><div class="stat"><b>1,000+</b><span>HORSEPOWER*</span></div><div class="stat"><b>&lt; 2 s*</b><span>0–60 MPH</span></div><div class="stat"><b>620 mi*</b><span>RANGE</span></div></div>
 <ul class="check-list"><li>Adaptive aerodynamics</li><li>Premium interior</li><li>Next-generation battery</li><li>All-wheel drive architecture</li></ul>
 <p class="muted">*Datos ilustrativos para este prototipo académico; las especificaciones y disponibilidad deben confirmarse con Tesla.</p>
@@ -81,7 +94,7 @@ main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.scre
 <div class="tabs"><button class="active" data-tab="exterior">Exterior</button><button data-tab="interior">Interior</button><button data-tab="wheels">Wheels</button></div>
 <div class="car-visual" id="configImage" style="height:220px"></div>
 <div id="exteriorPanel"><h3 class="subtitle">Exterior color</h3><div class="swatches"><button class="swatch active" data-color="red" aria-label="Red"></button><button class="swatch" data-color="white" aria-label="White"></button><button class="swatch" data-color="silver" aria-label="Silver"></button><button class="swatch" data-color="black" aria-label="Black"></button><button class="swatch" data-color="blue" aria-label="Blue"></button></div><p class="muted" id="colorName">Signature Red</p></div>
-<div id="interiorPanel" class="hidden"><h3 class="subtitle">Interior design</h3><div class="grid2"><button class="tile" data-interior="Black premium"><b>Black premium</b><small>Minimalismo deportivo.</small></button><button class="tile" data-interior="White premium"><b>White premium</b><small>Elegancia contemporánea.</small></button></div></div>
+<div id="interiorPanel" class="hidden"><div class="car-visual" id="interiorPhoto" style="height:190px;margin-bottom:13px"></div><h3 class="subtitle">Interior design</h3><div class="grid2"><button class="tile" data-interior="Black premium"><b>Black premium</b><small>Minimalismo deportivo.</small></button><button class="tile" data-interior="White premium"><b>White premium</b><small>Elegancia contemporánea.</small></button></div></div>
 <div id="wheelsPanel" class="hidden"><h3 class="subtitle">Wheel design</h3><div class="grid2"><button class="tile" data-wheel="Sport 19”"><b>Sport 19”</b><small>Ligereza y precisión.</small></button><button class="tile" data-wheel="Performance 20”"><b>Performance 20”</b><small>Presencia y desempeño.</small></button></div></div>
 <div class="config-card"><div class="config-row"><div><b>Selected configuration</b><p id="configDescription">Performance · Signature Red</p></div><strong id="configPrice">$200,000*</strong></div></div>
 <button class="btn primary block" data-go="financing">Continue to financing</button>
@@ -108,7 +121,7 @@ main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.scre
 </section>
 <section class="screen" id="summary">
 <div class="section-head"><div class="eyebrow">YOUR ROADSTER</div><h1 class="title">Purchase summary.</h1><p class="muted">Review your selected configuration.</p></div>
-<div class="car-visual" style="height:200px"></div>
+<div class="car-visual" id="summaryRoadster" style="height:200px"></div>
 <div class="config-card"><b id="summaryModel">Roadster · Performance</b><p class="muted" id="summaryConfig">Signature Red · Black premium · Sport wheels</p><div class="summary-line"><span>Roadster configuration</span><strong id="summaryBase">$200,000*</strong></div><div class="summary-line"><span>Benefits applied</span><strong style="color:var(--green)">−$5,000*</strong></div><div class="summary-line"><span>Estimated delivery</span><strong>3–6 months*</strong></div><div class="summary-line"><span>Total estimate</span><strong class="total" id="summaryTotal">$195,000*</strong></div></div>
 <p class="muted">*Precios, incentivos y plazos son únicamente ilustrativos y no representan una oferta real.</p>
 <button class="btn primary block" data-action="confirm">Confirm request</button><button class="btn outline block" style="margin-top:8px" data-go="configurator">Edit configuration</button>
