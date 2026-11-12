@@ -126,6 +126,38 @@ main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.scre
 #welcome .hero h1{font-size:clamp(41px,10vw,55px)!important}
 #welcome .hero h1 em{color:#f4f7ff!important}
 #welcome .welcome-features .tile{background:linear-gradient(135deg,#242b39,#0e1018 85%)!important}
+
+/* Roadster Studio — refined home dashboard */
+#home .home-intro{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin:12px 0 20px}
+#home .home-intro .title{font-size:clamp(32px,8vw,43px);line-height:1;letter-spacing:-.075em;margin:11px 0 6px}
+#home .home-intro .muted{font-size:12px;margin:0}
+#home .home-dot{color:#f3233d}
+#home .home-status{flex-shrink:0;display:flex;align-items:center;gap:5px;color:#9b9da7;border:1px solid #363943;border-radius:999px;padding:8px;font-size:7px;letter-spacing:.08em;margin-top:3px}
+#home .home-status-light{width:5px;height:5px;background:#f22d45;border-radius:50%;box-shadow:0 0 8px #e6213b}
+#home .home-showcase{height:330px;position:relative;border:1px solid #40424b;border-radius:20px;overflow:hidden;background:#09090c}
+#home #homeRoadster{height:100%;width:100%;border:0;border-radius:0;background-position:center 45%;background-size:cover;transition:transform .45s}
+#home .home-showcase:hover #homeRoadster{transform:scale(1.04)}
+#home .home-showcase:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#050506 0%,#050506dc 20%,#05050644 54%,transparent 85%);pointer-events:none}
+#home .home-showcase-overlay{position:absolute;z-index:2;bottom:20px;left:20px;right:20px}
+#home .home-showcase-kicker{font-size:9px;font-weight:900;letter-spacing:.22em;color:#ff455d}
+#home .home-showcase h2{font-size:clamp(31px,8vw,43px);line-height:.92;letter-spacing:-.065em;margin:9px 0}
+#home .home-showcase p{font-size:11px;color:#dddde3;margin:0 0 15px}
+#home .home-showcase-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+#home .home-showcase-actions .btn{font-size:10px;padding:12px 18px}
+#home .home-instagram{font-size:10px;color:#e5e5ea;text-decoration:underline;text-underline-offset:4px}
+#home .home-section-label{display:flex;justify-content:space-between;margin:25px 1px 12px;color:#b3b4bc;font-size:9px;font-weight:800;letter-spacing:.16em}
+#home .home-actions{gap:10px}
+#home .home-actions .tile{position:relative;display:flex;flex-direction:column;text-align:left;min-height:150px;padding:18px 15px;border-radius:16px;border:1px solid #353943;background:linear-gradient(145deg,#1a1b21,#101014);transition:transform .2s,border-color .2s}
+#home .home-actions .tile:hover{transform:translateY(-3px);border-color:#e82139}
+#home .home-action-icon{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:#e8213920;color:#ff3a52;font-size:21px}
+#home .home-action-index{position:absolute;right:15px;top:17px;color:#656772;font-size:10px;font-weight:700}
+#home .home-actions b{font-size:12px;margin:17px 0 7px}
+#home .home-actions small{font-size:10px;line-height:1.5}
+#home .home-next{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;padding:18px;background:linear-gradient(125deg,#241319,#101014);border:1px solid #4d303a;border-radius:17px}
+#home .home-next h3{font-size:14px;margin:8px 0 5px}
+#home .home-next p{font-size:10px;line-height:1.5;color:#b1adb3;margin:0}
+#home .home-next .btn{flex-shrink:0}
+@media(max-width:390px){#home .home-showcase{height:300px}#home .home-status{display:none}#home .home-actions .tile{padding:14px 12px}#home .home-next{align-items:flex-start;flex-direction:column}#home .home-next .btn{width:100%}}
 </style>
 </head>
 <body>
@@ -143,10 +175,19 @@ main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.scre
 <p class="muted" style="text-align:center">Prototipo académico. El acceso es demostrativo y no valida credenciales reales.</p>
 </section>
 <section class="screen" id="home">
-<div class="section-head"><div class="eyebrow">WELCOME TO YOUR ROADSTER</div><h1 class="title">Hello, <span id="helloName">Driver</span>!</h1><p class="muted">Let's find your perfect Roadster.</p></div>
-<div class="car-visual" id="homeRoadster"></div>
-<div class="grid2" style="margin-top:11px"><button class="tile" data-go="models"><div class="symbol">⌁</div><b>Explore Roadster</b><small>Discover three extraordinary configurations.</small></button><button class="tile" data-go="financing"><div class="symbol">▤</div><b>AI Financing</b><small>Find a plan that fits your goals.</small></button><button class="tile" data-go="benefits"><div class="symbol">♛</div><b>My Benefits</b><small>Exclusive ownership benefits.</small></button><button class="tile" data-go="configurator"><div class="symbol">⚙</div><b>My Configuration</b><small>Customize every detail.</small></button></div>
-<div class="config-card config-row"><div><b style="font-size:11px">Ready for the next step?</b><p>Schedule a personal Roadster experience.</p></div><button class="btn primary" data-go="testdrive">Book →</button></div>
+<div class="home-intro"><div><div class="eyebrow">YOUR ROADSTER EXPERIENCE</div><h1 class="title">Hello, <span id="helloName">Driver</span><span class="home-dot">.</span></h1><p class="muted">Your next chapter starts here.</p></div><span class="home-status"><span class="home-status-light"></span> ROADSTER STUDIO</span></div>
+<div class="home-showcase">
+<div class="car-visual" id="homeRoadster" role="img" aria-label="Tesla Roadster featured vehicle"></div>
+<div class="home-showcase-overlay"><span class="home-showcase-kicker">01 / DISCOVER</span><h2>Meet the<br>extraordinary.</h2><p>Explore the Roadster experience.</p><div class="home-showcase-actions"><button class="btn primary" data-go="models">Discover Roadster <span aria-hidden="true">↗</span></button><a class="home-instagram" href="https://www.instagram.com/p/Del25ckgK_w/" target="_blank" rel="noopener noreferrer" aria-label="Open the Roadster Instagram reference">View reference ↗</a></div></div>
+</div>
+<div class="home-section-label"><span>YOUR EXPERIENCE</span><span>EXPLORE <span aria-hidden="true">↘</span></span></div>
+<div class="grid2 home-actions">
+<button class="tile" data-go="models"><span class="home-action-icon">↗</span><span class="home-action-index">01</span><b>Explore Roadster</b><small>Discover three remarkable configurations.</small></button>
+<button class="tile" data-go="financing"><span class="home-action-icon">▤</span><span class="home-action-index">02</span><b>AI Financing</b><small>Explore a plan that fits your goals.</small></button>
+<button class="tile" data-go="benefits"><span class="home-action-icon">✦</span><span class="home-action-index">03</span><b>My Benefits</b><small>Discover ownership privileges.</small></button>
+<button class="tile" data-go="configurator"><span class="home-action-icon">◇</span><span class="home-action-index">04</span><b>My Configuration</b><small>Make every detail your own.</small></button>
+</div>
+<div class="home-next"><div><span class="eyebrow">THE NEXT STEP</span><h3>Ready to experience it?</h3><p>Explore a demonstration of the Roadster test-drive request.</p></div><button class="btn primary" data-go="testdrive">Explore <span aria-hidden="true">↗</span></button></div>
 </section>
 <section class="screen" id="models">
 <div class="section-head"><div class="eyebrow">ROADSTER COLLECTION</div><h1 class="title">Choose your<br>Roadster.</h1><p class="muted">Three extraordinary configurations.</p></div>
