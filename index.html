@@ -114,6 +114,18 @@ main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.scre
 @keyframes flightPulse{to{opacity:.9;filter:blur(8px)}}
 @media(prefers-reduced-motion:reduce){.flight-vehicle,.flight-thruster{animation:none}}
 @media(max-width:390px){#welcome .flight-hero{height:450px}.flight-vehicle{top:68px;height:205px}#welcome .hero h1{font-size:40px}#welcome .hero-copy{left:17px;right:17px}#welcome .hero-actions .btn{font-size:9px;padding:10px}}
+
+/* FORCE OVERRIDE: the welcome hero must never inherit the old road photograph */
+#welcome .hero.flight-hero{height:530px!important;background:#050713!important;background-image:none!important;overflow:hidden!important;border-radius:23px!important;border:1px solid #46546c!important;box-shadow:0 20px 50px #000b!important}
+#welcome .flight-sky{z-index:0!important;opacity:1!important;background:radial-gradient(ellipse at 70% 17%,#597ca57d,transparent 48%),radial-gradient(ellipse at 60% 58%,#284b79,transparent 45%),linear-gradient(160deg,#03040a 0%,#111e34 47%,#1c3757 66%,#020307 90%)!important}
+#welcome .flight-vehicle{z-index:1!important;top:70px!important;left:0!important;right:0!important;height:235px!important;background-image:url('https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/R_/_V_/1-tesla-roadster-performance-front-desktop-wide.jpg')!important;background-position:center!important;background-size:contain!important}
+#welcome .flight-thruster{z-index:1!important}
+#welcome .flight-label{z-index:2!important}
+#welcome .hero-copy{z-index:3!important}
+#welcome .hero.flight-hero:before{z-index:2!important;pointer-events:none!important;background:linear-gradient(0deg,#020308 0%,#030409f0 24%,#03040977 48%,transparent 72%)!important}
+#welcome .hero h1{font-size:clamp(41px,10vw,55px)!important}
+#welcome .hero h1 em{color:#f4f7ff!important}
+#welcome .welcome-features .tile{background:linear-gradient(135deg,#242b39,#0e1018 85%)!important}
 </style>
 </head>
 <body>
