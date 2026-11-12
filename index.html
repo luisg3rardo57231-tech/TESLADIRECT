@@ -52,6 +52,25 @@ main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.scre
 #interiorPhoto{background-image:url('https://s1.cdn.autoevolution.com/images/gallery/TESLA-MOTORS-Roadster-6176_1.jpg');background-position:center 45%}
 #summaryRoadster{background-image:url('https://images.1thingaweek.com/article/4-tesla-roadster-2020-back.jpg');background-position:center 54%}
 
+
+/* CONFIGURATION CARDS — reference layout */
+#models .section-head{margin:12px 0 10px}
+#models .section-head .title{font-size:25px;letter-spacing:.055em;text-transform:uppercase;line-height:1.12}
+#models .section-head .muted{font-size:11px;letter-spacing:.04em}
+#models .roadster-option{height:148px;position:relative;display:block;overflow:hidden;margin:12px 4px;border:3px solid #f4f4f5;border-radius:23px;background:#030304;box-shadow:0 5px 16px #0009}
+#models .option-copy{position:absolute;z-index:2;left:8px;top:17px;width:42%;pointer-events:none}
+#models .option-copy h3{font-size:14px;line-height:1.1;text-transform:uppercase;margin:0 0 10px;font-weight:850;letter-spacing:-.025em}
+#models .option-copy p{font-size:10px;line-height:1.45;color:#f0f0f2;margin:0;max-width:125px}
+#models .option-image{position:absolute;right:0;top:0;width:59%;height:100%;background-repeat:no-repeat;background-size:contain;background-position:center;background-color:#030304;filter:saturate(.92)}
+#models .option-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#030304 0%,#03030400 28%,transparent 100%)}
+#models #modelPerformance{background-image:url('https://www.autobics.com/wp-content/uploads/2017/11/new-tesla-roadster-red-2020-pr.jpg')}
+#models #modelThrust{background-image:url('https://s1.cdn.autoevolution.com/images/news/gallery/here-we-go-again-tesla-roadster-might-debut-this-month_5.jpg')}
+#models #modelRocket{background-image:url('https://images.1thingaweek.com/article/4-tesla-roadster-2020-back.jpg')}
+#models .option-explore{position:absolute;z-index:3;right:8px;bottom:4px;width:52%;height:29px;border:0;background:linear-gradient(0deg,#030304e8,transparent);color:#fff;font-size:13px;font-weight:750}
+#models .option-explore:active{color:#ff5262}
+#models>.btn{margin:8px 4px}
+@media(max-width:360px){#models .roadster-option{height:140px;margin:11px 2px}#models .option-copy{top:15px;width:43%}#models .option-copy h3{font-size:13px}#models .option-copy p{font-size:9px}#models .option-image{width:59%}}
+
 </style>
 </head>
 <body>
@@ -76,9 +95,9 @@ main{padding:20px 17px 30px}.screen{display:none;animation:enter .25s ease}.scre
 </section>
 <section class="screen" id="models">
 <div class="section-head"><div class="eyebrow">ROADSTER COLLECTION</div><h1 class="title">Choose your<br>Roadster.</h1><p class="muted">Three extraordinary configurations.</p></div>
-<div class="config-card"><div class="car-visual" id="modelPerformance"></div><div class="config-row" style="margin-top:12px"><div><h3>Performance</h3><p>The ultimate driving experience.</p></div><button class="btn primary" data-action="choose" data-model="Performance">Explore →</button></div></div>
-<div class="config-card"><div class="car-visual" id="modelThrust"></div><div class="config-row"><div><h3>Thrust</h3><p>Added propulsion for more power.</p></div><button class="btn primary" data-action="choose" data-model="Thrust">Explore →</button></div></div>
-<div class="config-card"><div class="car-visual" id="modelRocket"></div><div class="config-row"><div><h3>Rocket</h3><p>An exclusive invitation to the extraordinary.</p></div><button class="btn primary" data-action="choose" data-model="Rocket">Explore →</button></div></div>
+<article class="roadster-option"><div class="option-copy"><h3>Performance</h3><p>The ultimate driving experience.</p></div><div class="option-image" id="modelPerformance" role="img" aria-label="Roadster Performance"></div><button class="option-explore" data-action="choose" data-model="Performance">Explore</button></article>
+<article class="roadster-option"><div class="option-copy"><h3>Thrust</h3><p>Added propulsion for more power.</p></div><div class="option-image" id="modelThrust" role="img" aria-label="Roadster Thrust"></div><button class="option-explore" data-action="choose" data-model="Thrust">Explore</button></article>
+<article class="roadster-option"><div class="option-copy"><h3>Rocket</h3><p>An exclusive invitation.</p></div><div class="option-image" id="modelRocket" role="img" aria-label="Roadster Rocket"></div><button class="option-explore" data-action="choose" data-model="Rocket">Explore</button></article>
 <button class="btn outline block" data-go="details">Compare configurations</button>
 </section>
 <section class="screen" id="details">
